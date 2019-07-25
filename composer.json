@@ -1,0 +1,12 @@
+{
+    "name": "brexis/test-app",
+    "authors": [
+        {
+            "name": "Boris Koumondji",
+            "email": "brexis2009@yahoo.fr"
+        }
+    ],
+    "require": {
+        "fedapay/fedapay-php": "^0.1.9"
+    }
+}
