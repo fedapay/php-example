@@ -3,3 +3,4 @@
 /.vscode
 .phpunit.result.cache
 /webhook.log
+/composer.lock
