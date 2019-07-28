@@ -28,7 +28,7 @@ $transaction = Transaction::create([
 $transaction->sendNow('mtn', ['phone_number' => ['number' => '66994148', "country" => "bj"]]);
 
 /**
- * Or generate a payment link to let the customer choose his payment mode
+ * Or generate a payment link to let the customer choose its payment mode
  *
  * $token = $transaction->generateToken();
  * // to paymen page at $token->url
