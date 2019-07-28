@@ -1,15 +1,27 @@
 <?php
 include './vendor/autoload.php';
 
+// You can find your endpoint's secret in your webhook settings
+$endpoint_secret = 'wh_dev_EU8SV4Wyg2JrMoRGvJeEG-5l';
+
 $payload = @file_get_contents('php://input');
+$sig_header = $_SERVER['HTTP_X_FEDAPAY_SIGNATURE'];
 $event = null;
 
 try {
-    $event = new \FedaPay\Event(
-        json_decode($payload, true)
+    $event = \FedaPay\Webhook::constructEvent(
+        $payload, $sig_header, $endpoint_secret
     );
-} catch(\Exception $e) {
+} catch(\UnexpectedValueException $e) {
     // Invalid payload
+    file_put_contents('webhook.log', 'UnexpectedValueException');
+
+    http_response_code(400);
+    exit();
+} catch(\FedaPay\Error\SignatureVerification $e) {
+    // Invalid signature
+    file_put_contents('webhook.log', '\FedaPay\Error\SignatureVerification');
+
     http_response_code(400);
     exit();
 }

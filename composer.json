@@ -7,6 +7,6 @@
         }
     ],
     "require": {
-        "fedapay/fedapay-php": "^0.1.9"
+        "fedapay/fedapay-php": "^0.1.10"
     }
 }

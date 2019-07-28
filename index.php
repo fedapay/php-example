@@ -5,8 +5,8 @@ include './vendor/autoload.php';
 use \FedaPay\FedaPay;
 use \FedaPay\Transaction;
 
-FedaPay::setApiKey("sk_sandbox_QOnQj0rYVtoDb-jOMVurIz60");
-FedaPay::setEnvironment('sandbox');
+FedaPay::setApiKey("sk_local_123");
+FedaPay::setApiBase('https://dev-api.fedapay.com');
 
 /**
  * Create a transaction
@@ -33,4 +33,3 @@ $transaction->sendNow('mtn', ['phone_number' => ['number' => '66994148', "countr
  * $token = $transaction->generateToken();
  * // to paymen page at $token->url
  */
- 
