@@ -5,8 +5,8 @@ include './vendor/autoload.php';
 use \FedaPay\FedaPay;
 use \FedaPay\Transaction;
 
-FedaPay::setApiKey("sk_local_123");
-FedaPay::setApiBase('https://dev-api.fedapay.com');
+FedaPay::setApiKey("sk_xxxxx");
+FedaPay::setEnvironment('sandbox');
 
 /**
  * Create a transaction

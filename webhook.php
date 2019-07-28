@@ -2,7 +2,7 @@
 include './vendor/autoload.php';
 
 // You can find your endpoint's secret in your webhook settings
-$endpoint_secret = 'wh_dev_EU8SV4Wyg2JrMoRGvJeEG-5l';
+$endpoint_secret = 'wh_xxxxx';
 
 $payload = @file_get_contents('php://input');
 $sig_header = $_SERVER['HTTP_X_FEDAPAY_SIGNATURE'];
